@@ -143,21 +143,21 @@ class AppPresser_Admin_Settings extends AppPresser {
 				// If there is a 'appp-settings.php' file,
 				if ( file_exists( $dir .'/appp-settings.php' ) ) {
 					// include it
-					return require_once( $dir .'/appp-settings.php' );
+					require_once( $dir .'/appp-settings.php' );
 				}
 				// Ok, check parent theme directory
 				$dir = $this->themes[ $appp_theme ]->get_template_directory();
 				// If there is a 'appp-settings.php' file,
 				if ( file_exists( $dir .'/appp-settings.php' ) ) {
 					// include it
-					return require_once( $dir .'/appp-settings.php' );
+					require_once( $dir .'/appp-settings.php' );
 				}
 			}
 		}
 		// Otherwise if there is a 'appp-settings.php' file in the currently active theme,
 		elseif ( file_exists( get_stylesheet_directory_uri() .'/appp-settings.php' ) ) {
 			// include it
-			return require_once( get_stylesheet_directory_uri() .'/appp-settings.php' );
+			require_once( get_stylesheet_directory_uri() .'/appp-settings.php' );
 		}
 
 		/**
